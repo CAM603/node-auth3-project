@@ -42,6 +42,8 @@
 - users
     * `users-model.js`
     * `users-router.js`
+- config
+    * `secrets.js`
 
 ## Inside .env
 - Add `PORT=5000`
@@ -152,6 +154,19 @@ module.exports = server => {
 - Add `const router = require('express').Router();`
 - Add `const Users = require('../users/users-model.js');`
 - Add `module.exports = router;`
+- Add `const jwt = require('jsonwebtoken');`
+- Add `const secrets = require('../config/secrets');`
+
+## Inside .env
+- Add 
+
+## Inside secrets.js
+- Add:
+```js
+module.exports = {
+    jwtSecret: process.env.JWT_SECRET || 'I like pineapple on pizza'
+}
+```
 
 ## Create a migration
 - `knex migrate:make create_users_table`
@@ -214,5 +229,13 @@ exports.seed = function(knex) {
     * getById
     * add
 
+## Inside users-router
+- Add get request
+
+## Inside auth-router.js
+- Add enpoints for login and logout
+- Add generateToken(user)
+
 ## Inside restricted-middleware.js
 - Add `module.exports = (req, res, next) => etc`
+- See `restricted-middleware.js` for details
