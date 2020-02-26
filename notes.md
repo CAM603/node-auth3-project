@@ -235,6 +235,7 @@ exports.seed = function(knex) {
 ## Inside auth-router.js
 - Add enpoints for login and logout
 - Add generateToken(user)
+    * Move to `secrets.js`
 
 ## Inside restricted-middleware.js
 - Add `module.exports = (req, res, next) => etc`

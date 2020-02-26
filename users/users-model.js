@@ -8,7 +8,7 @@ module.exports = {
 }
 
 function get() {
-    return db('users').select('id', 'username', 'password');
+    return db('users').select('id', 'username', 'department');
 }
 
 function getBy(filter) {
