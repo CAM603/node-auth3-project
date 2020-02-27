@@ -4,7 +4,8 @@ module.exports = {
     add,
     get,
     getBy,
-    getById
+    getById,
+    getByDepartment
 }
 
 function get() {
@@ -13,6 +14,10 @@ function get() {
 
 function getBy(filter) {
     return db('users').where(filter);
+}
+
+function getByDepartment(department) {
+    return db('users').where({department})
 }
 
 async function add(user) {
