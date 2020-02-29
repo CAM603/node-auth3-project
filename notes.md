@@ -158,7 +158,7 @@ module.exports = server => {
 - Add `const secrets = require('../config/secrets');`
 
 ## Inside .env
-- Add 
+- Add JWT_SECRET=I like pineapple on pizza
 
 ## Inside secrets.js
 - Add:
